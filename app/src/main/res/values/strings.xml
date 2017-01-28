@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Remind2Speech</string>
+
+    <string name="title">Title</string>
+    <string name="text_to_be_spoken">Text to be spoken</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="add_new_remind">Add new remind</string>
+
+    <string name="toast_saving_alarm">Saving alarm, it will take only a while...</string>
+    <string name="toast_empty_text">Text to be spoken can not be empty</string>
+    <string name="toast_empty_title">Title can not be empty</string>
+    <string name="toast_date_future">Select date in the future</string>
+    <string name="toast_date_wrong">Selected date is wrong</string>
+    <string name="toast_reminder_set_error">Error occureed, reminder not set.</string>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="alarmtypevalues">
+        <item>notification</item>
+        <item>activity</item>
+    </string-array>
+
+    <string-array name="alarmtype">
+        <item>Top bar notification</item>
+        <item>Alarm screen</item>
+    </string-array>
+</resources>

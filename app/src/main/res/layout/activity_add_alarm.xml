@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_alarm"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="wnns.remind2speech.activities.ActivityAddAlarm">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_add"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/AppTheme"
+        app:titleTextColor="#FFFFFF"
+        app:title="@string/add_new_remind" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingTop="20dp"
+        android:weightSum="1">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textCapSentences"
+            android:ems="10"
+            android:id="@+id/editTextTitle"
+            android:hint="@string/title" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:inputType="text|textCapSentences|textMultiLine"
+            android:ems="10"
+            android:id="@+id/editTextText"
+            android:hint="@string/text_to_be_spoken"
+            android:textAlignment="textStart"
+            android:layout_weight="0.24"
+            android:gravity="top|left" />
+
+        <Button
+            android:text="@string/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonTime"
+            android:gravity="left|center_vertical"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textColor="?attr/editTextColor"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="5dp" />
+
+        <Button
+            android:text="@string/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDate"
+            android:gravity="left|center_vertical"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textColor="?attr/editTextColor"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="5dp" />
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
