@@ -24,6 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import wnns.remind2speech.AlarmUtils;
 import wnns.remind2speech.activities.fragments.DatePickerFragment;
 import wnns.remind2speech.R;
 import wnns.remind2speech.RemindAlarmManager;
@@ -122,21 +123,11 @@ public class ActivityAddAlarm extends AppCompatActivity {
             return;
         }
 
-        if(!alarmDate.after(new Date())){
+        AlarmUtils alarmUtils = new AlarmUtils(getApplicationContext());
 
-            Toast.makeText(getApplicationContext(), getString(R.string.toast_date_future), Toast.LENGTH_SHORT).show();
-            return;
-        }
+        if(!alarmUtils.isAlarmOk(alarmTitle, alarmText, alarmDate)){
 
-        if(TextUtils.isEmpty(alarmTitle)){
-
-            Toast.makeText(getApplicationContext(), getString(R.string.toast_empty_title), Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if(TextUtils.isEmpty(alarmText)){
-
-            Toast.makeText(getApplicationContext(), getString(R.string.toast_empty_text), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), alarmUtils.getAlarmError(), Toast.LENGTH_SHORT).show();
             return;
         }
 

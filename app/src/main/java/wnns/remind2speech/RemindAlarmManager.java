@@ -20,17 +20,15 @@ import java.util.UUID;
 import wnns.remind2speech.activities.ActivityAddAlarm;
 import wnns.remind2speech.db.DBManager;
 
-/**
- * Created by Dominik on 2016-11-17.
- */
+
 public class RemindAlarmManager {
 
     AlarmManager alarmManager;
     Context context;
 
-    public RemindAlarmManager(Context _context){
+    public RemindAlarmManager(Context context){
 
-        this.context = _context;
+        this.context = context;
         this.alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
     }
 
@@ -59,7 +57,6 @@ public class RemindAlarmManager {
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, intAlarmID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         alarmManager.setExact(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + alarmTime, pendingIntent);
-        //alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + 10*1000, pendingIntent);
 
     }
 

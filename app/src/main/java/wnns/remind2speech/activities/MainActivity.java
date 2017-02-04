@@ -96,15 +96,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()){
+        if(item.getItemId() == R.id.item_activity_add){
 
-            case R.id.item_activity_add:
-
-                Intent openAddActivityIntent = new Intent(this, ActivityAddAlarm.class);
-                startActivity(openAddActivityIntent);
-                break;
+            Intent openAddActivityIntent = new Intent(this, ActivityAddAlarm.class);
+            startActivity(openAddActivityIntent);
         }
-
         return true;
     }
 

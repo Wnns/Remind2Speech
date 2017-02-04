@@ -10,7 +10,7 @@ import java.io.File;
 
 public class SpeechManager {
 
-    TextToSpeech tts;
+    TextToSpeech textToSpeech;
     Context context;
 
     public SpeechManager(Context _context){
@@ -23,11 +23,11 @@ public class SpeechManager {
         final String name = _name;
         final String text = _text;
 
-        tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
+        textToSpeech = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
 
-                tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+                textToSpeech.setOnUtteranceProgressListener(new UtteranceProgressListener() {
 
                     @Override
                     public void onStart(String utteranceId) {}
@@ -35,7 +35,7 @@ public class SpeechManager {
                     @Override
                     public void onDone(String utteranceId) {
 
-                        tts.shutdown();
+                        textToSpeech.shutdown();
                         _activity.finish();
                     }
 
@@ -53,7 +53,7 @@ public class SpeechManager {
                 });
 
                 File speechFile = new File(context.getExternalFilesDir(null), name + ".mp3");
-                tts.synthesizeToFile(text, null, speechFile, "ttsfile");
+                textToSpeech.synthesizeToFile(text, null, speechFile, "ttsfile");
             }
         });
     }
